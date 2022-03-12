@@ -16,6 +16,10 @@ namespace JURNALMOD3_1202200019
             Console.WriteLine("Get all kode Buah");
             table_KodeBuah.getAllkodeBuah();
 
+            Console.WriteLine("Kunci Pintu");
+            PosisiKarakterGame posisi = new PosisiKarakterGame();
+           
+
         }
     }
     class KodeBuah
@@ -57,6 +61,34 @@ namespace JURNALMOD3_1202200019
         }
     }
 
+    class PosisiKarakterGame
+    {
+        enum state {Jongkok, Berdiri, Tengkurap, Terbang};
+        public void main()
+        {
+            state state = state.Berdiri;
+            string[] posisiName = { "Berdiri", "Terbang", "Jongkok", "Tengkurap" };
+            while (State != state.Tengkurap)
+            {
+                Console.WriteLine(posisiName[(string)state] + "Posisi");
+                Console.Write("Posisi : ");
+                string command = Console.ReadLine();
+                switch (state)
+                {
+                    case state.Berdiri:
+                        if (command == "TombolW")
+                            state = state.Terbang + ("Tombol arah atas ditekan");
+                        else if (command == "TombolS")
+                            state = state.Berdiri + ("Tombol arah bawah ditekan");
+                        else if (command == "TombolS")
+                            state = state.Tengkurap;
+                        else (command == "TombolW")
+                        break;
+                }
+            }
+        }
+
+    }
 
 }
 
